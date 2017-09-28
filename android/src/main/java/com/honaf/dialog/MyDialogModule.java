@@ -41,7 +41,7 @@ public class MyDialogModule extends ReactContextBaseJavaModule
      * @param callback
      */
     @ReactMethod
-    public void actionSheet(ReadableArray array, final Callback callback){
+    public void actionSheet(ReadableArray array, String title, final Callback callback){
         final String[] str = new String[array.size()];
         for (int i = 0; i<array.size(); i++ ){
             str[i] = array.getString(i);
@@ -54,6 +54,9 @@ public class MyDialogModule extends ReactContextBaseJavaModule
                     }
                 }
         );
+        if (title != null) {
+            dialog.setTitle(title);
+        }
         dialog.show();
     }
     /**

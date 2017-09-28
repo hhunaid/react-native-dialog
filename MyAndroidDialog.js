@@ -21,7 +21,7 @@ let MyAndroidDialog = {
      * callback: 选择item的回调
      */
     showActionSheetWithOptions(obj,callback){
-        MyDialogModule.actionSheet(obj.options,(index)=>{
+        MyDialogModule.actionSheet(obj.options,obj.title,(index)=>{
             callback(index);
         });
     },
